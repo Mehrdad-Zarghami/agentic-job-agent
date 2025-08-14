@@ -25,7 +25,7 @@ cp .env.example .env
 
 
 
-### Configuration (.env file)
+### 2)Configuration (.env file)
 
 This project uses a .env file to store environment variables — settings and secrets that the application needs to run but should never be hard-coded into the source code.
 
@@ -112,3 +112,39 @@ How ```.env``` variables flow through the system
 * The agent system (LangChain, OpenAI API, ChromaDB) uses them without exposing the actual keys in the code.
 
 **Note**: .env is listed in .gitignore to ensure it is never committed to GitHub.
+
+## Project Structure
+
+```bash
+
+agentic-job-researcher/
+├─ README.md # Project documentation and usage guide
+├─ LICENSE # License file (MIT by default)
+├─ requirements.txt # Python dependencies
+├─ .gitignore # Files and folders to ignore in Git
+├─ .env.example # Example environment variables (copy to .env)
+├─ Makefile # Helpful commands for setup, ingest, query, clean
+├─ src/ # Main source code
+│ ├─ app.py # CLI entry point for ingesting and querying jobs
+│ ├─ config.py # Loads .env variables and sets constants
+│ ├─ tools/ # Modules for fetching job data (API/scrapers)
+│ │ └─ jobs_adapter.py
+│ ├─ chains/ # LLM prompt chains for summarization
+│ │ └─ summarize.py
+│ ├─ memory/ # Vector database wrapper (ChromaDB)
+│ │ └─ vectorstore.py
+│ └─ utils/ # Utility functions (I/O, formatting, etc.)
+│ └─ io.py
+├─ data/ # Data storage
+│ ├─ raw/ # Raw job data as fetched
+│ ├─ processed/ # Summarized/cleaned job data
+│ └─ vectorstore/ # ChromaDB persistent storage
+├─ tests/ # Unit and integration tests
+│ └─ test_smoke.py
+└─ sample_data/ # Example job postings for demo/testing
+└─ jobs_sample.json
+```
+
+
+
+
