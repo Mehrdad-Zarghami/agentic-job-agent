@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Computer Vision Engineer",
+        "company": "Visionworks",
+        "location": "Remote UK",
+        "description": "OpenCV, PyTorch, YOLO, deploy on edge",
+        "url": "https://example.com/jobs/1"
+
+    },
+    {
+        "title": "AI Agent Developer",
+        "company": "FlowOps",
+        "location": "Hybrid London",
+        "description": "Langchain/CrewAI, vector DB, API integrations",
+        "url": "https://example.com/jobs/2"
+    }
+]
