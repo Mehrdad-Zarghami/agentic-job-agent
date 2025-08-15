@@ -4,7 +4,7 @@ from pathlib import Path
 
 load_dotenv()
 
-#The second argument is the deafult value in case key is not provided in .env file
+#The second argument is the deafult value in case any of the keys are not provided in .env file
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 MODEL = os.getenv("MODEL", "gpt-4o-mini") 
 EMBED_MODEL = os.getenv("EMBED_MODEL", "text-embedding-3-small")
