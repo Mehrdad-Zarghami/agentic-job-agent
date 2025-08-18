@@ -183,3 +183,11 @@ cython_debug/
 
 ##################
 dummy/
+
+.venv/
+__pycache__/
+*.pyc
+.env
+data/vectorstore/
+data/processed/*.json
+data/raw/*.json

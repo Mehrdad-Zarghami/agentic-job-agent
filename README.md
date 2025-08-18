@@ -113,6 +113,36 @@ How ```.env``` variables flow through the system
 
 **Note**: .env is listed in .gitignore to ensure it is never committed to GitHub.
 
+### 2) First run (with sample data)
+
+Ingest the sample jobs into the vector database:
+
+```bash
+python -m src.app ingest --source=sample
+```
+
+Then query the data with a natural language question:
+
+```bash
+python -m src.app query "remote python jobs in uk"
+```
+
+---
+
+### 3) Using a real source
+
+Once you implement a live adapter in `src/tools/jobs_adapter.py`, you can run:
+
+```bash
+python -m src.app ingest --source=live --q "computer vision" --location "UK"
+```
+
+---
+
+✅ Note: Running with `python -m src.app` ensures Python treats `src/` as a proper package, which avoids relative import errors.
+
+
+
 ## Project Structure
 
 ```bash
@@ -144,7 +174,3 @@ agentic-job-researcher/
 └─ sample_data/ # Example job postings for demo/testing
 └─ jobs_sample.json
 ```
-
-
-
-
